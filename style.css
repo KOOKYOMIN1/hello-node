@@ -82,3 +82,17 @@ p {
 
 #prevBtn { left: 0; }
 #nextBtn { right: 0; }
+.img-wrapper {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.img-wrapper img {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.img-wrapper img:hover {
+  transform: scale(1.08);
+}
