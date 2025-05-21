@@ -24,7 +24,7 @@
 
 ## 📸 스크린샷
 
-<img src="https://www.google.com/imgres?q=%EA%B5%AC%EA%B5%90%EB%AF%BC%20%ED%94%84%EB%A1%9C%EA%B2%8C%EC%9D%B4%EB%A8%B8&imgurl=https%3A%2F%2Fcgeimage.commutil.kr%2Fphpwas%2Frestmb_allidxmake.php%3Fpp%3D002%26idx%3D3%26simg%3D2017082402530171029_20170824025457dgame_2.jpg%26nmt%3D27&imgrefurl=https%3A%2F%2Fwww.dailyesports.com%2Fview.php%3Fud%3D2017082402530171029_27&docid=GfcAlTsBVGt3CM&tbnid=x4xg2xP6a3ve1M&vet=12ahUKEwi1-oXG07ONAxXMoq8BHYxvGZEQM3oECCEQAA..i&w=540&h=300&hcb=2&ved=2ahUKEwi1-oXG07ONAxXMoq8BHYxvGZEQM3oECCEQAA" alt="screenshot" />
+<img src="https://github.com/KOOKYOMIN1/-/raw/bf547e845824bbe8bf6d516beb61b905bb8d0812/restmb_allidxmake.jpg" alt="screenshot" />
 
 ---
 
