@@ -115,8 +115,9 @@ p {
   color: red;
 }
 footer {
-  margin-top: 50px;
+  margin-top: 40px;
   font-size: 0.9em;
   color: #aaa;
   text-align: center;
+  padding-bottom: 20px;
 }
