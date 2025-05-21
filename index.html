@@ -16,19 +16,19 @@
     <h2>🏆 나의 커리어</h2>
     <div class="gallery">
       <figure>
-        <img src="images/pubg_gamescom_win.jpg" alt="Gamescom Invitational Solo Winner" />
+        <img src="images/pubg_gamescom_win.jpg" alt="Gamescom Invitational Solo Winner" onclick="openLightbox(this.src)" />
         <figcaption>2017 PUBG Gamescom Invitational Solo Winner</figcaption>
       </figure>
       <figure>
-        <img src="images/pubg_asia_win.jpg" alt="PUBG Asia Duo Champion" />
+        <img src="images/pubg_asia_win.jpg" alt="PUBG Asia Duo Champion" onclick="openLightbox(this.src)" />
         <figcaption>2017 PUBG Asia Invitational Duo Winner</figcaption>
       </figure>
       <figure>
-        <img src="images/pubg_600k_team.jpg" alt="600K Showdown Winner" />
+        <img src="images/pubg_600k_team.jpg" alt="600K Showdown Winner" onclick="openLightbox(this.src)" />
         <figcaption>PGI Showdown – 1st Place ($600,000)</figcaption>
       </figure>
       <figure>
-        <img src="images/ogn_supermatch.jpg" alt="OGN Supermatch" />
+        <img src="images/ogn_supermatch.jpg" alt="OGN Supermatch" onclick="openLightbox(this.src)" />
         <figcaption>Seoul Cup OGN Supermatch Champion</figcaption>
       </figure>
     </div>
@@ -37,5 +37,20 @@
       <source src="music.mp3" type="audio/mpeg" />
       브라우저가 오디오를 지원하지 않아요.
     </audio>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="확대 이미지" />
+</div>
+<script>
+  function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = src;
+    lightbox.style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+</script>
   </body>
 </html>
