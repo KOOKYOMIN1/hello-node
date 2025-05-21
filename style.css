@@ -96,3 +96,21 @@ p {
 .img-wrapper img:hover {
   transform: scale(1.08);
 }
+.like-box {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.like-btn {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.like-btn.clicked {
+  color: red;
+}
