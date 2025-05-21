@@ -114,3 +114,9 @@ p {
 .like-btn.clicked {
   color: red;
 }
+footer {
+  margin-top: 50px;
+  font-size: 0.9em;
+  color: #aaa;
+  text-align: center;
+}
