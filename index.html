@@ -4,6 +4,41 @@
     <meta charset="UTF-8" />
     <title>교민의 첫 웹사이트</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.9);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .lightbox img {
+        max-width: 80%;
+        max-height: 80%;
+      }
+
+      .lightbox button {
+        position: absolute;
+        top: 50%;
+        background: none;
+        color: white;
+        font-size: 3em;
+        border: none;
+        cursor: pointer;
+        padding: 0 20px;
+        user-select: none;
+        z-index: 1000;
+      }
+
+      #prevBtn { left: 0; }
+      #nextBtn { right: 0; }
+    </style>
   </head>
   <body>
     <h1>안녕하세요! 저는 구교민입니다 🧑‍💻</h1>
@@ -41,20 +76,44 @@
       <source src="music.mp3" type="audio/mpeg" />
       브라우저가 오디오를 지원하지 않아요.
     </audio>
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img" src="" alt="확대 이미지" />
-</div>
-<script>
-  function openLightbox(src) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    lightboxImg.src = src;
-    lightbox.style.display = 'flex';
-  }
 
-  function closeLightbox() {
-    document.getElementById('lightbox').style.display = 'none';
-  }
-</script>
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+      <button id="prevBtn" onclick="prevImage(event)">&#10094;</button>
+      <img id="lightbox-img" src="" alt="확대 이미지" />
+      <button id="nextBtn" onclick="nextImage(event)">&#10095;</button>
+    </div>
+
+    <script>
+      const images = Array.from(document.querySelectorAll('.gallery img'));
+      let currentIndex = 0;
+
+      function openLightbox(src) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        currentIndex = images.findIndex(img => img.src.includes(src.split('/').pop()));
+        lightboxImg.src = images[currentIndex].src;
+        lightbox.style.display = 'flex';
+      }
+
+      function closeLightbox(event) {
+        if (event.target.id === 'lightbox' || event.target.tagName === 'IMG') {
+          document.getElementById('lightbox').style.display = 'none';
+        }
+      }
+
+      function prevImage(event) {
+        event.stopPropagation();
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        document.getElementById('lightbox-img').src = images[currentIndex].src;
+      }
+
+      function nextImage(event) {
+        event.stopPropagation();
+        currentIndex = (currentIndex + 1) % images.length;
+        document.getElementById('lightbox-img').src = images[currentIndex].src;
+      }
+    </script>
   </body>
 </html>

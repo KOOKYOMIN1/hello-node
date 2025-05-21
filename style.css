@@ -15,7 +15,6 @@ p {
   font-size: 1.2em;
 }
 
-/* ✨ 여기에 갤러리 스타일 추가 */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -45,6 +44,8 @@ p {
   font-size: 0.95em;
   color: #ddd;
 }
+
+/* ✅ Lightbox 관련 스타일 */
 .lightbox {
   display: none;
   justify-content: center;
@@ -58,10 +59,26 @@ p {
 }
 
 .lightbox img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 80%;
+  max-height: 80%;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease;
   cursor: pointer;
 }
+
+.lightbox button {
+  position: absolute;
+  top: 50%;
+  background: none;
+  color: white;
+  font-size: 3em;
+  border: none;
+  cursor: pointer;
+  padding: 0 20px;
+  user-select: none;
+  z-index: 1000;
+}
+
+#prevBtn { left: 0; }
+#nextBtn { right: 0; }
