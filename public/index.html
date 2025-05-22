@@ -160,27 +160,27 @@
       btn.classList.add('clicked');
     });
   });
-// 서버 기본 응답 fetch
-  fetch('https://hello-node-0sgb.onrender.com/')
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById('response').textContent = data;
-    })
-    .catch(error => {
-      document.getElementById('response').textContent = '서버 요청 실패';
-      console.error('서버 요청 실패:', error);
-    });
+// 서버 응답 텍스트 받아오기
+fetch('/')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('response').textContent = data;
+  })
+  .catch(error => {
+    document.getElementById('response').textContent = '서버 요청 실패';
+    console.error('서버 요청 실패:', error);
+  });
 
-  // 🧭 방문자 수 fetch
-  fetch('/api/visitor')
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById('visitor-count').textContent = data.value;
-    })
-    .catch(error => {
-      console.error('방문자 수 가져오기 실패:', error);
-      document.getElementById('visitor-count').textContent = '불러오기 실패';
-    });
+// 방문자 수
+fetch('/api/visitor')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('visitor-count').textContent = data.value;
+  })
+  .catch(error => {
+    console.error('방문자 수 가져오기 실패:', error);
+    document.getElementById('visitor-count').textContent = '불러오기 실패';
+  });
     </script>
   </body>
 </html>
