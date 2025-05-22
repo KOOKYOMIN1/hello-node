@@ -19,7 +19,7 @@
 
 - 만든 날짜: 2025년 5월
 - 사용한 도구: Git Bash, VSCode, GitHub
-"👀 Live at https://hello-node-0sgb.onrender.com"
+-"👀 Live at https://hello-node-0sgb.onrender.com"
 ---
 
 ## 📸 스크린샷
