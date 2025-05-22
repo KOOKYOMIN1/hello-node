@@ -162,14 +162,15 @@
       btn.classList.add('clicked');
     });
   });
-   fetch('https://hello-node-0sgb.onrender.com/')
-    .then(response => response.text())
-    .then(data => {
-      document.body.innerHTML = data;
-    })
-    .catch(error => {
-      console.error('서버 요청 실패:', error);
-    });
+  fetch('https://hello-node-0sgb.onrender.com')
+  .then(res => res.text()) // ← JSON이 아니라 텍스트로 받아야 함
+  .then(data => {
+    document.getElementById('response').textContent = data;
+  })
+  .catch(error => {
+    document.getElementById('response').textContent = '서버 요청 실패';
+    console.error('서버 요청 실패:', error);
+  });
     </script>
   </body>
 </html>
