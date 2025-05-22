@@ -104,8 +104,14 @@
       <img id="lightbox-img" src="" alt="확대 이미지" />
       <button id="nextBtn" onclick="nextImage(event)">&#10095;</button>
     </div>
-    <p id="response" style="color: white; text-align: center; margin-top: 20px;">
+   <!-- 응답 메시지 -->
+<p id="response" style="color: white; text-align: center; margin-top: 20px;">
   응답 기다리는 중...
+</p>
+
+<!-- ✅ 방문자 수 표시 -->
+<p style="color: white; text-align: center; margin-top: 10px;">
+  방문자 수: <span id="visitor-count">로딩 중...</span>
 </p>
     <script>
       const images = Array.from(document.querySelectorAll('.gallery img'));
@@ -154,15 +160,27 @@
       btn.classList.add('clicked');
     });
   });
- fetch('https://hello-node-0sgb.onrender.com/')
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById('response').textContent = data;
-  })
-  .catch(error => {
-    document.getElementById('response').textContent = '서버 요청 실패';
-    console.error('서버 요청 실패:', error);
-  });
+// 서버 기본 응답 fetch
+  fetch('https://hello-node-0sgb.onrender.com/')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('response').textContent = data;
+    })
+    .catch(error => {
+      document.getElementById('response').textContent = '서버 요청 실패';
+      console.error('서버 요청 실패:', error);
+    });
+
+  // 🧭 방문자 수 fetch
+  fetch('https://hello-node-0sgb.onrender.com/api/visitor')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('visitor-count').textContent = data.value;
+    })
+    .catch(error => {
+      console.error('방문자 수 가져오기 실패:', error);
+      document.getElementById('visitor-count').textContent = '불러오기 실패';
+    });
     </script>
   </body>
 </html>
