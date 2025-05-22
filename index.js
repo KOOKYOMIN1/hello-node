@@ -6,18 +6,16 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// 🔐 CORS (프론트가 따로 없으므로 '*'로 허용해도 무방)
 app.use(cors());
 
-// ✅ 정적 파일 서빙: public 폴더
+// ✅ 정적 파일 서빙
 app.use(express.static(path.join(__dirname, 'public')));
 
-// ✅ 기본 라우터 - index.html 서빙
+// ✅ 루트 경로 → index.html 열기
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// ✅ 방문자 수 프록시 API
 app.get('/api/visitor', async (req, res) => {
   try {
     const response = await fetch('https://api.countapi.xyz/hit/kookyomin1.github.io/visits');

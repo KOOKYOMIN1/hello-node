@@ -19,7 +19,7 @@
 
 - 만든 날짜: 2025년 5월
 - 사용한 도구: Git Bash, VSCode, GitHub
-
+"👀 Live at https://hello-node-0sgb.onrender.com"
 ---
 
 ## 📸 스크린샷
@@ -30,7 +30,7 @@
 
 ## 📬 Contact
 
-- GitHub: [@KOOKYOMIN1](https://github.com/KOOKYOMIN1)
+🔗 [웹사이트 바로가기](https://hello-node-0sgb.onrender.com)
 - 이메일: pgold97488@naver.com
 
 ---
