@@ -18,13 +18,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/visitor', async (req, res) => {
-  try {
-    const response = await fetch('https://api.countapi.xyz/hit/kookyomin1.github.io/visits');
-    const data = await response.json();
-    res.json(data);
-  } catch (error) {
-    res.status(500).json({ error: 'API 요청 실패' });
-  }
+  res.json({ value: 1234 }); // 👈 임시 응답
 });
 
 app.listen(port, () => {
