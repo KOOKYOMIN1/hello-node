@@ -98,20 +98,15 @@
         </figcaption>
       </figure>
     </div>
-
-    <audio controls autoplay loop>
-      <source src="music.mp3" type="audio/mpeg" />
-      브라우저가 오디오를 지원하지 않아요.
-    </audio>
-
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
       <button id="prevBtn" onclick="prevImage(event)">&#10094;</button>
       <img id="lightbox-img" src="" alt="확대 이미지" />
       <button id="nextBtn" onclick="nextImage(event)">&#10095;</button>
     </div>
-
-     <p id="response">응답 기다리는 중...</p>
+    <p id="response" style="color: white; text-align: center; margin-top: 20px;">
+  응답 기다리는 중...
+</p>
     <script>
       const images = Array.from(document.querySelectorAll('.gallery img'));
       let currentIndex = 0;
@@ -159,8 +154,8 @@
       btn.classList.add('clicked');
     });
   });
-  fetch('https://hello-node-0sgb.onrender.com/')
-  .then(res => res.text()) // ← JSON이 아니라 텍스트로 받아야 함
+ fetch('https://hello-node-0sgb.onrender.com')
+  .then(res => res.text())
   .then(data => {
     document.getElementById('response').textContent = data;
   })
