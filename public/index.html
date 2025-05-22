@@ -172,7 +172,7 @@
     });
 
   // 🧭 방문자 수 fetch
-  fetch('https://hello-node-0sgb.onrender.com/api/visitor')
+  fetch('/api/visitor')
     .then(res => res.json())
     .then(data => {
       document.getElementById('visitor-count').textContent = data.value;

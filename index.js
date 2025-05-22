@@ -6,8 +6,9 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors());
-
+app.use(cors({
+  origin: 'https://hello-node-fixed.onrender.com'
+}));
 // ✅ 정적 파일 서빙
 app.use(express.static(path.join(__dirname, 'public')));
 
