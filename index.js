@@ -1,19 +1,23 @@
 const express = require('express');
 const cors = require('cors');
-const fetch = require('node-fetch'); // ✅ 이 줄 추가
+const fetch = require('node-fetch');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors({
-  origin: 'https://kookyomin1.github.io'
-}));
+// 🔐 CORS (프론트가 따로 없으므로 '*'로 허용해도 무방)
+app.use(cors());
 
+// ✅ 정적 파일 서빙: public 폴더
+app.use(express.static(path.join(__dirname, 'public')));
+
+// ✅ 기본 라우터 - index.html 서빙
 app.get('/', (req, res) => {
-  res.send('안녕, 교민! 백엔드 연결 성공 🎉');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// ✅ 방문자 수 프록시 라우터
+// ✅ 방문자 수 프록시 API
 app.get('/api/visitor', async (req, res) => {
   try {
     const response = await fetch('https://api.countapi.xyz/hit/kookyomin1.github.io/visits');
